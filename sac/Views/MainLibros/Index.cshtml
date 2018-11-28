@@ -1,0 +1,89 @@
+﻿@model IEnumerable<sac.Models.tblLibros>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xs-12 col-md-12">
+    <div class="row">
+        <div class="box box-success" style="font-family:Courier New;">
+            <div class="box-header">
+                <h4 class="box-title" style="font-family:Courier New;"><strong>Listado de "Libros"</strong></h4>
+            </div>
+            <div class="box-body table-responsive" >
+                <p>
+                    @Html.ActionLink("Nuevo Registro", "Create", new { },new { @class="btn bg-navy"})
+                </p>
+                <table class="table table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>
+                            N°
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.fecha)
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.tblAfavorde.nombres)*@
+                            Otorgantes
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.tblOtorgante.nombres)*@
+                            A favor de
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.instrumento)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.folios)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.libro)
+                        </th>
+                        <th>                            
+                            @Html.DisplayNameFor(model => model.img)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.idlibros)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fecha)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tblOtorgante.nombres)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.tblAfavorde.nombres)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.instrumento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.folios)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.libro)
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.img)*@
+                            <a href="@Html.DisplayFor(modelItem => item.img)" class="btn bg-green fa fa-eye" target="_blank"></a> |
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.idlibros }, new { @class = "fa fa-edit btn bg-black" }) |
+                            @Html.ActionLink(" ", "Details", new { id = item.idlibros }, new { @class = "fa fa-folder-open btn bg-aqua" }) |
+                            @Html.ActionLink(" ", "Delete", new { id = item.idlibros }, new { @class = "fa fa-trash btn bg-red" })
+                        </td>
+                    </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

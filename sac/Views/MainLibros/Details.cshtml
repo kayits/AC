@@ -1,0 +1,93 @@
+﻿@model sac.Models.tblLibros
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-12 col-md-3"></div>
+<div class="col-xs-12 col-md-6">
+    <div class="row">
+        <div class="box box-success" style="font-family:Courier New;">
+            <div class="box-header">
+                <h4 class="box-title" style="font-family:Courier New;"><strong>Detalles de "Libros"</strong></h4>
+            </div>
+            <div class="box-body">
+                <div>
+                    <hr style="margin-top:-10px;"/>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha)
+                        </dd>
+                        <dt>
+                            @*@Html.DisplayNameFor(model => model.tblAfavorde.nombres)*@
+                            Otorgante
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tblOtorgante.nombres)
+                        </dd>
+
+                        <dt>
+                            @*@Html.DisplayNameFor(model => model.tblOtorgante.nombres)*@
+                            A favor de
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tblAfavorde.nombres)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.afiliado)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.afiliado)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.instrumento)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.instrumento)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.folios)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.folios)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.libro)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.libro)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.img)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.img)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.idlibros }, new { @class="btn btn-warning"}) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-3"></div>

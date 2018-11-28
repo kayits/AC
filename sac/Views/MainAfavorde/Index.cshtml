@@ -1,0 +1,94 @@
+﻿@model IEnumerable<sac.Models.tblAfavorde>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-12 col-md-12">
+    <div class="row">
+        <div class="box box-success" style="font-family:Courier New;">
+            <div class="box-header">
+                <h4 class="box-title" style="font-family:Courier New;"><strong>Listado de "A favor de"</strong></h4>
+            </div>
+            <div class="box-body table-responsive">
+                <p>
+                    @Html.ActionLink("Nuevo Registro", "Create", new { },new { @class="btn bg-navy"})
+                </p>
+                <table class="table table-hover table-condensed">
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.nombres)*@
+                            Otorgante
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.apellidos)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.genero)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.telefono)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.correo)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.fechanacimiento)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.lugarnacimiento)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.municipio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.departamento)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombres)
+                                @Html.DisplayFor(modelItem => item.apellidos)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.apellidos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.genero)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.telefono)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.correo)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.fechanacimiento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.lugarnacimiento)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.municipio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.departamento)
+                            </td>
+                            <td>
+                                @Html.ActionLink(" ", "Edit", new { id = item.idfavorde }, new { @class= "fa fa-edit btn bg-black" }) |
+                                @Html.ActionLink(" ", "Details", new { id = item.idfavorde }, new { @class = "fa fa-folder-open btn bg-aqua" }) |
+                                @Html.ActionLink(" ", "Delete", new { id = item.idfavorde }, new { @class = "fa fa-trash btn bg-red" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
